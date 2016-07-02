@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#contains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#describes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Step"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#hasDifficulty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#hasDifficulty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Difficulty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#originatesFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#originatesFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#cholesterolgr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#cholesterolgr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#cooktime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#cooktime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Ingredient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#difficulty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#difficulty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Difficulty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#energykj -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#energykj">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#fibregr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#fibregr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#imageurl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#imageurl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#instruction -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#instruction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Step"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#preptime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#preptime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#proteingr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#proteingr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#saturatedfatkj -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#saturatedfatkj">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#servings -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#servings">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#sodiummgr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#sodiummgr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#stepnr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#stepnr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Step"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#sugargr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#sugargr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#totalcarbgr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#totalcarbgr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#totalfatgr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#totalfatgr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#African -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#African">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#American -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#American">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Animal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Ingredient"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Asian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Asian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Beef -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Beef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cheese -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Dairy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Dairy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Difficulty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Difficulty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#European -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#European">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Cuisine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Fish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Fish">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Fruit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Fruit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Grain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Grain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Ingredient">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Animal"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Nut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Nut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Pork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Pork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Poultry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Poultry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Recipe"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Step -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Step"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegetable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegetable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#Vegan"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+

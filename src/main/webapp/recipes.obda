@@ -1,0 +1,401 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/mariëlle/ontologies/2016/5/untitled-ontology-5#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[SourceDeclaration]
+sourceUri	datasource1
+connectionUrl	jdbc:mysql://localhost/recipes?sessionVariables=sql_mode='ANSI'
+username	root
+password	asesganadas
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	Recipe concept and name, preptime, cooktime, servings and imageurl data property
+target		:recipe/{recipe_id} a :Recipe ; :name {name} ; :preptime {preptime} ; :cooktime {cooktime} ; :servings {servings} ; :imageurl {imageurl} . 
+source		SELECT recipe_id, name, preptime, cooktime,servings, imageurl FROM recipes
+
+mappingId	European concept
+target		:cuisine/{cuisine} a :European . 
+source		SELECT DISTINCT cuisine  FROM recipes
+			WHERE cuisine  LIKE '%British%' 
+			OR cuisine LIKE '%Italian%'
+			OR cuisine LIKE '%French%'
+			OR cuisine LIKE '%Greek%'
+
+mappingId	Difficulty concept
+target		:difficulty/{difficulty} a :Difficulty . 
+source		SELECT DISTINCT difficulty FROM recipes
+
+mappingId	Recipe concept and data properties concerning nutritional values
+target		:recipe/{recipe_id} a :Recipe ; :energykj {energykj} ; :saturatedfatkj {saturatedfatkj} ; :totalfatgr {totalfatgr} ; :sugargr {sugargr} ; :fibregr {fibregr} ; :proteingr {proteingr} ; :cholesterolgr {cholesterolgr} ; :sodiummgr {sodiummgr} ; :totalcarbgr {totalcarbgr} . 
+source		SELECT recipe_id, energykj, saturatedfatkj, totalfatgr, sugargr, totalcarbgr, fibregr, proteingr, cholesterolgr, sodiummgr FROM  nutritionalvalues
+
+mappingId	Ingredient concept and description data property
+target		:ingredient/{ingredient_id} a :Ingredient ; :description {description} . 
+source		SELECT DISTINCT ingredient_id, description FROM ingredients
+
+mappingId	Step concept and stepnr and instruction data property
+target		:step/{step_id} a :Step ; :stepnr {stepnr} ; :instruction {instruction} . 
+source		SELECT DISTINCT step_id, instruction, stepnr FROM steps
+
+mappingId	contains object property
+target		:recipe/{recipe_id} :contains :ingredient/{ingredient_id} . 
+source		SELECT recipe_id , ingredient_id FROM ingredients
+
+mappingId	describes object property
+target		:step/{step_id} :describes :recipe/{recipe_id} . 
+source		SELECT step_id,recipe_id FROM steps
+
+mappingId	originatesFrom object property
+target		:recipe/{recipe_id} :originatesFrom :cuisine/{cuisine} . 
+source		SELECT DISTINCT cuisine, recipe_id FROM recipes
+
+mappingId	American concept
+target		:cuisine/{cuisine} a :American . 
+source		SELECT DISTINCT cuisine  FROM recipes
+			WHERE cuisine  LIKE '%American%'
+
+mappingId	Asian concept
+target		:cuisine/{cuisine} a :Asian . 
+source		SELECT DISTINCT cuisine  FROM recipes
+			WHERE cuisine  LIKE '%Indian%'
+			OR cuisine LIKE '%Chinese%'
+			OR cuisine LIKE '%Japanese%'
+			OR cuisine LIKE '%Asian%'
+
+mappingId	Cuisine concept
+target		:cuisine/{cuisine} a :Cuisine . 
+source		SELECT DISTINCT cuisine  FROM recipes
+			WHERE cuisine  LIKE '%Australian%'
+
+mappingId	Poultry concept
+target		:ingredient/{ingredient_id} a :Poultry . 
+source		SELECT ingredient_id From ingredients
+			WHERE (description  LIKE '%chicken%' 
+			OR description  LIKE '%quail%' 
+			OR description  LIKE '%turkey%' 
+			OR description  LIKE '%duck%' )
+			AND NOT description LIKE '%stock%'
+
+mappingId	Pork concept
+target		:ingredient/{ingredient_id} a :Pork . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE description LIKE  '%prosciutto%'
+			OR description LIKE  '%ham%'
+			OR description LIKE  '%pork%'
+			OR description LIKE  '%bacon%'
+
+mappingId	Beef concept
+target		:ingredient/{ingredient_id} a :Beef . 
+source		SELECT ingredient_id  FROM ingredients
+			WHERE description LIKE  '%beef%'
+			AND NOT description LIKE '%stock%'.
+
+mappingId	hasDifficulty object property
+target		:recipe/{recipe_id} :hasDifficulty :difficulty/{difficulty} . 
+source		SELECT DISTINCTdifficulty, recipe_id FROM recipes
+
+mappingId	Animal concept
+target		:ingredient/{ingredient_id} a :Ingredient . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE description LIKE '%egg%' 
+			OR description LIKE '%fish stock%'
+			OR description LIKE '%chicken stock%'
+			OR description LIKE '%beef stock%'
+			OR description LIKE '%gelatine%'
+			OR description LIKE '%fish sauce%'
+
+mappingId	Fruit concept
+target		:ingredient/{ingredient_id} a :Fruit . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE (description LIKE '%apple%'   
+			OR description LIKE '%apricot%'
+			OR description LIKE '%avocado%' 
+			OR description LIKE '%banana%'
+			OR description LIKE '%bilberry%'
+			OR description LIKE '%blackberry%'     
+			OR description LIKE '%blackcurrant%'
+			OR description LIKE '%blueberry%'     
+			OR description LIKE '%currant%'
+			OR description LIKE '%cherry%'   
+			OR description LIKE '%bilberry%'
+			OR description LIKE '%coconut%'   
+			OR description LIKE '%cranberry%'
+			OR description LIKE '%dragonfruit%'
+			OR description LIKE '%eldberry%' 
+			OR description LIKE '%grape%'
+			OR description LIKE '%guava%'
+			OR description LIKE '%grapefruit%'
+			OR description LIKE '%kiwi%'
+			OR description LIKE '%kumquat%'
+			OR description LIKE '%lemon%'
+			OR description LIKE '%lime%'
+			OR description LIKE '%lychee%'
+			OR description LIKE '%mango%'
+			OR description LIKE '%melon%'
+			OR description LIKE '%nectarine%'
+			OR description LIKE '%orange%'
+			OR description LIKE '%mandarine%'
+			OR description LIKE '%clementine%'
+			OR description LIKE '%tangerine%'
+			OR description LIKE '%papaya%'
+			OR description LIKE '%peach%'
+			OR description LIKE '%pear%'
+			OR description LIKE '%plum%'
+			OR description LIKE '%pineapple%'
+			OR description LIKE '%pomelo%'
+			OR description LIKE '%quince%'
+			OR description LIKE '%raspberry%'
+			OR description LIKE '%strawberry%')
+			AND NOT (description  LIKE '%juice%')
+			AND NOT (description   LIKE '%jam%')
+			AND NOT (description  LIKE '%peel%')
+			AND NOT (description  LIKE '%marmalade%')
+			AND NOT (description  LIKE '%rind%')
+			AND NOT (description  LIKE '%zest%')
+			AND NOT (description  LIKE '%chili%')
+			AND NOT (description  LIKE '%leaves%')
+			AND NOT (description  LIKE '%topping%')
+			AND NOT (description  LIKE '%jelly%')
+			AND NOT (description  LIKE '%essence%')
+			AND NOT (description  LIKE '%milk%' )
+			AND NOT (description  LIKE '%cream%' )
+
+mappingId	Vegetable concept
+target		:ingredient/{ingredient_id} a :Vegetable . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE (description LIKE '%artichoke%'   
+			OR description LIKE '%asparagus%'
+			OR description LIKE '%bean%' 
+			OR description LIKE '%beet%'
+			OR description LIKE '%pepper%'
+			OR description LIKE '%broccoli%'     
+			OR description LIKE '%cabbaget%'
+			OR description LIKE '%capersy%'     
+			OR description LIKE '%carrot%'
+			OR description LIKE '%cauliflower%'   
+			OR description LIKE '%celery%'
+			OR description LIKE '%corn%'   
+			OR description LIKE '%cucumber%'
+			OR description LIKE '%radish%'
+			OR description LIKE '%eggplant%' 
+			OR description LIKE '%garlic%'
+			OR description LIKE '%fennel%'
+			OR description LIKE '%ginger%'
+			OR description LIKE '%spinach%'
+			OR description LIKE '%kale%'
+			OR description LIKE '%lettuce%'
+			OR description LIKE '%iceberg%'
+			OR description LIKE '%romaine%'
+			OR description LIKE '%mango%'
+			OR description LIKE '%mushroom%'
+			OR description LIKE '%olive%'
+			OR description LIKE '%onion%'
+			OR description LIKE '%parsley%'
+			OR description LIKE '%peas%'
+			OR description LIKE '%potato%'
+			OR description LIKE '%pumpkin%'
+			OR description LIKE '%chard%'
+			OR description LIKE '%zucchini%'
+			OR description LIKE '%tomato%')
+			AND NOT (description   LIKE '%juice%'
+			OR description  LIKE '%sauce%'
+			OR description  LIKE '%oil%'
+			OR description  LIKE '%passata%' 
+			OR description  LIKE '%paste%' 
+			OR description  LIKE '%powder%')
+
+mappingId	Nut concept
+target		:ingredient/{ingredient_id} a :Nut . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE (description LIKE '%nut%'   
+			OR description LIKE '%almond%'
+			OR description LIKE '%cashew%' 
+			OR description LIKE '%pecan%'
+			OR description LIKE '%Pistachio%'
+			OR description LIKE '%macadamia%')
+			AND  NOT (description  LIKE '%biscuit%'
+			OR description  LIKE '%milk%'
+			OR description  LIKE '%oil%'
+			OR description  LIKE '%butter%')
+
+mappingId	Grain concept
+target		:ingredient/{ingredient_id} a :Grain . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE (description LIKE '%rice%'   
+			OR description LIKE '%wheat%'
+			OR description LIKE '%oat%' 
+			OR description LIKE '%rey%'
+			OR description LIKE '%muesli%'
+			OR description LIKE '%couscous%'
+			OR description LIKE '%noodles%'
+			OR description LIKE '%spaghetti%'  
+			OR description LIKE '%macaroni%'
+			OR description LIKE '%pasta%' 
+			OR description LIKE '%barley%' )
+			AND NOT (description LIKE  '%milk%'
+			OR description LIKE  '%oil%'
+			OR description LIKE '%butter%')
+
+mappingId	Fish concept
+target		:ingredient/{ingredient_id} a :Fish . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE ( description LIKE '%fish%'
+			OR description LIKE '%salmon%'
+			OR description LIKE '%cod%'
+			OR description LIKE '%shrimp%'
+			OR description LIKE '%squid%'
+			OR description LIKE '%octopus%'
+			OR description LIKE '%lobster%'
+			OR description LIKE '%crab%'
+			OR description LIKE '%mussel%'
+			OR description LIKE '%herring%'
+			OR description LIKE '%bass%'
+			OR description LIKE '%mackerel%'
+			OR description LIKE '%tuna%'
+			OR description LIKE '%perch%'
+			OR description LIKE '%oyster%'
+			OR description LIKE '%hake%'
+			OR description LIKE '%calimari%'
+			OR description LIKE '%prawn%'
+			) 
+			AND NOT (description LIKE '%oil%' 
+			OR description LIKE '%sauce%'
+			OR description LIKE '%stock%'
+			OR description LIKE '%mushrooms%'
+			OR description LIKE '%shake%'
+			)
+
+mappingId	Cheese concept
+target		:ingredient/{ingredient_id} a :Cheese . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE ( description LIKE '%cheese%'
+			OR description LIKE '%brie%'
+			OR description LIKE '%cheddar%'
+			OR description LIKE '%butterkase%'
+			OR description LIKE '%camembert%'
+			OR description LIKE '%edam%'
+			OR description LIKE '%emmentaler%'
+			OR description LIKE '%mozzarela%'
+			OR description LIKE '%gorgonzola%'
+			OR description LIKE '%gouda%'
+			OR description LIKE '%mascarpone%'
+			OR description LIKE '%parmesan%'
+			OR description LIKE '%ricota%'
+			) 
+			AND NOT (description LIKE '%edamame%' )
+
+mappingId	Dairy concept
+target		:ingredient/{ingredient_id} a :Dairy . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE ( description LIKE '%milk%'
+			OR description LIKE '%cream%'
+			OR description LIKE '%yogurt%'
+			OR description LIKE '%smetana%'
+			OR description LIKE '%butter%'
+			OR description LIKE '%gelato%'
+			OR description LIKE '%kefir%'
+			) 
+			AND NOT (description LIKE '%coconut%'
+			OR description LIKE '%tartar%' 
+			OR description LIKE '%pure%'
+			OR description LIKE '%horseradish%' 
+			OR description LIKE '%jam%'
+			OR description LIKE '%nut%'
+			OR description LIKE '%cucumber%'
+			)
+
+mappingId	Meat
+target		:ingredient/{ingredient_id} a :Meat . 
+source		SELECT ingredient_id  FROM ingredients
+			WHERE description LIKE '%rump%'
+			OR description LIKE '%deer%'
+			OR description LIKE '%rabbit%'
+			OR description LIKE '%hourse%'
+
+mappingId	Vegan concept
+target		:ingredient/{ingredient_id} a :Vegan . 
+source		SELECT ingredient_id FROM ingredients
+			WHERE (NOT ( description LIKE '%milk%'
+			OR description LIKE '%cream%'
+			OR description LIKE '%yogurt%'
+			OR description LIKE '%smetana%'
+			OR description LIKE '%butter%'
+			OR description LIKE '%gelato%'
+			OR description LIKE '%kefir%' ) 
+			OR description LIKE '%coconut%'
+			OR description LIKE '%tartar%' 
+			OR description LIKE '%pure%'
+			OR description LIKE '%horseradish%' 
+			OR description LIKE '%jam%'
+			OR description LIKE '%nut%'
+			OR description LIKE '%cucumber%'
+			)
+			AND 
+			( NOT ( description LIKE '%cheese%'
+			OR description LIKE '%brie%'
+			OR description LIKE '%cheddar%'
+			OR description LIKE '%butterkase%'
+			OR description LIKE '%camembert%'
+			OR description LIKE '%edam%'
+			OR description LIKE '%emmentaler%'
+			OR description LIKE '%mozzarela%'
+			OR description LIKE '%gorgonzola%'
+			OR description LIKE '%gouda%'
+			OR description LIKE '%mascarpone%'
+			OR description LIKE '%parmesan%'
+			OR description LIKE '%ricota%' ) 
+			OR description LIKE '%edamame%' )
+			AND
+			( NOT ( description LIKE '%fish%'
+			OR description LIKE '%salmon%'
+			OR description LIKE '%cod%'
+			OR description LIKE '%shrimp%'
+			OR description LIKE '%squid%'
+			OR description LIKE '%octopus%'
+			OR description LIKE '%lobster%'
+			OR description LIKE '%crab%'
+			OR description LIKE '%mussel%'
+			OR description LIKE '%herring%'
+			OR description LIKE '%bass%'
+			OR description LIKE '%mackerel%'
+			OR description LIKE '%tuna%'
+			OR description LIKE '%perch%'
+			OR description LIKE '%oyster%'
+			OR description LIKE '%hake%'
+			OR description LIKE '%calimari%' 
+			OR description LIKE '%prawn%') 
+			OR description LIKE '%oil%' 
+			OR description LIKE '%sauce%'
+			OR description LIKE '%stock%'
+			OR description LIKE '%mushrooms%'
+			OR description LIKE '%shake%'
+			)
+			AND 
+			NOT (description LIKE '%egg%'
+			OR description LIKE '%fish stock%'
+			OR description LIKE '%chicken stock%'
+			OR description LIKE '%beef stock%'
+			OR description LIKE '%gelatine%'
+			OR description LIKE '%fish sauce%')
+			AND 
+			NOT (description  LIKE '%chicken%' 
+			OR description  LIKE '%quail%' 
+			OR description  LIKE '%turkey%' 
+			OR description  LIKE '%duck%' )
+			AND 
+			NOT (description LIKE  '%prosciutto%'
+			OR description LIKE  '%ham%'
+			OR description LIKE  '%pork%'
+			OR description LIKE  '%bacon%'
+			OR description LIKE  '%bacon%'
+			OR description LIKE '%rump%'
+			)
+			AND
+			NOT description LIKE  '%beef%'         
+]]
+

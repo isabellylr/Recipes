@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8" name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+ </head> 
+ <body> 
+  <vaadin-vertical-layout size-full> 
+   <vaadin-absolute-layout style-name="danger" _id="mainPanel" :middle :center :expand> 
+    <vaadin-text-field width="230px" _id="includeTextField" :top="101px" :left="553px"></vaadin-text-field> 
+    <vaadin-text-field width="230px" _id="excludeTextField" :top="101px" :left="1014px"></vaadin-text-field> 
+    <vaadin-button icon="fonticon://FontAwesome/f055" style-name="friendly" id="include" plain-text _id="include" :top="101px" :left="794px">
+      Include 
+    </vaadin-button> 
+    <vaadin-button icon="fonticon://FontAwesome/f056" style-name="danger" immediate plain-text _id="exclude" :top="101px" :left="1271px">
+      Exclude 
+    </vaadin-button> 
+    <vaadin-panel style-name="borderless" width="230px" height="73px" _id="excludePanel" :top="156px" :left="1014px"> 
+     <vaadin-css-layout style-name="flexwrap" width="210px" height="1000px" _id="excludeLayout"></vaadin-css-layout> 
+    </vaadin-panel> 
+    <vaadin-panel width="315px" height="450px" :top="280px" :left="100px"> 
+     <vaadin-absolute-layout _id="checkBoxLayout"> 
+      <vaadin-text-field caption="Cuisine" style-name="borderless" _id="cuisine" :top="53px" :left="28px"></vaadin-text-field> 
+      <vaadin-check-box caption="cuisine 1" :top="70px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="cuisine 2" height="19px" :top="100px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="cuisine 3" :top="130px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="cuisine 4" :top="160px" :left="64px"></vaadin-check-box> 
+      <vaadin-text-field caption="Difficulty" style-name="borderless" :top="242px" :left="28px"></vaadin-text-field> 
+      <vaadin-check-box caption="Easy" _id="easyCheckBox" :top="270px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="Capable Cooks" _id="capableCooksCheckBox" :top="300px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="Super Easy" _id="superEasyCheckBox" :top="330px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="Advanced" _id="advancedCheckBox" :top="360px" :left="64px"></vaadin-check-box> 
+      <vaadin-check-box caption="Challenging" _id="challengingCheckBos" :top="390px" :left="64px"></vaadin-check-box> 
+     </vaadin-absolute-layout> 
+    </vaadin-panel> 
+    <vaadin-panel style-name="borderless" width="230px" height="72px" _id="includePanel" :top="156px" :left="553px"> 
+     <vaadin-css-layout style-name="flexwrap" width="220px" height="10000px" _id="includeLayout"></vaadin-css-layout> 
+    </vaadin-panel> 
+    <vaadin-panel style-name="borderless" width="900px" height="400px" _id="recepesPanel" :top="306px" :left="512px"> 
+     <vaadin-css-layout style-name="borderless flexwrap" width="900px" height="400px" _id="recipesLayout"></vaadin-css-layout> 
+    </vaadin-panel> 
+   </vaadin-absolute-layout> 
+  </vaadin-vertical-layout>  
+ </body>
+</html>
