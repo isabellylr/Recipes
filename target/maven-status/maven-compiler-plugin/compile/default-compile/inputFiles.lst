@@ -1,6 +1,9 @@
-/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/Util.java
+/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/RecipeView.java
+/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/implementations/MainScreenImp.java
+/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/util/Queries.java
+/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/implementations/RecipeOverviewImp.java
 /Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/MyUI.java
-/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/MainScreenImp.java
+/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/implementations/RecipeViewImp.java
 /Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/MainScreen.java
-/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/RecipeOverviewImp.java
+/Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/util/Util.java
 /Users/isabellyr/Documents/workspace/app/src/main/java/my/vaadin/app/RecipeOverview.java

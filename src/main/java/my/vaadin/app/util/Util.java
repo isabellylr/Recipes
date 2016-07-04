@@ -1,4 +1,4 @@
-package my.vaadin.app;
+package my.vaadin.app.util;
 
 import java.io.File;
 import java.util.ArrayList;

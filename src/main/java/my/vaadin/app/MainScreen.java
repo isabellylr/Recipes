@@ -26,21 +26,26 @@ public class MainScreen extends VerticalLayout {
 	protected AbsoluteLayout mainPanel;
 	protected TextField includeTextField;
 	protected TextField excludeTextField;
-	protected Button include;
-	protected Button exclude;
+	protected Button includeButton;
+	protected Button excludeButton;
 	protected Panel excludePanel;
 	protected CssLayout excludeLayout;
 	protected AbsoluteLayout checkBoxLayout;
 	protected TextField cuisine;
+	protected CheckBox americanCheckBox;
+	protected CheckBox europeanCheckBox;
+	protected CheckBox asianCheckBox;
 	protected CheckBox easyCheckBox;
 	protected CheckBox capableCooksCheckBox;
 	protected CheckBox superEasyCheckBox;
 	protected CheckBox advancedCheckBox;
-	protected CheckBox challengingCheckBos;
+	protected CheckBox challengingCheckBox;
 	protected Panel includePanel;
 	protected CssLayout includeLayout;
 	protected Panel recepesPanel;
 	protected CssLayout recipesLayout;
+	protected TextField searchTextField;
+	protected Button searchButton;
 
 	public MainScreen() {
 		Design.read(this);
