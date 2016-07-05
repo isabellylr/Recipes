@@ -8,12 +8,10 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
-
 import my.vaadin.app.MainScreen;
 import my.vaadin.app.RecipeView;
 import my.vaadin.app.util.Queries;
 import my.vaadin.app.util.Util;
-
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
@@ -201,7 +199,7 @@ public class MainScreenImp extends MainScreen{
 		this.recipesLayout.removeAllComponents();
 		int i = 0;
 		for (List<String> info : result) {
-			if (i++ > 100) break;
+			if (i++ > 300) break;
 			RecipeOverviewImp recipeOverview = new RecipeOverviewImp(
 					info.get(0),
 					info.get(5),
@@ -219,7 +217,8 @@ public class MainScreenImp extends MainScreen{
 		List<String> info = result.get(randomNum);
 		RecipeView content = new RecipeViewImp(info.get(5), info.get(1),
 				Util.runQuery(Queries.ingredientsQuery(info.get(0))),
-				Util.runQuery(Queries.stepsQuery(info.get(0))));
+				Util.runQuery(Queries.stepsQuery(info.get(0))),
+				Util.runQuery(Queries.nutritionalQuery(info.get(0))));
 		Window w = new Window(info.get(1));
     	w.setContent(content);
     	w.center();

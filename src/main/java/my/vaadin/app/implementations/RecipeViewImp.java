@@ -40,6 +40,18 @@ public class RecipeViewImp extends RecipeView {
 			this.steps.addComponent(l);
 			i += l.getHeight()+50;
 		}
+		List<String> n = nutitionalInfo.get(0);
+		this.cholesterol.setValue("Cholesterol: " + n.get(0) + "gr");
+		this.fibre.setValue("Fibre: " + n.get(2) + "gr");
+		this.saturatedfat.setValue("Saturated Fat: " + n.get(3) + "gr");
+		this.sodiumm.setValue("Sodiumm: " + n.get(4) + "gr");
+		this.sugar.setValue("Sugar: " + n.get(5) + "gr");
+		this.totalcarb.setValue("Total Carb: " + n.get(6) + "gr");
+		this.totalfat.setValue("Total Fat: " + n.get(7) + "gr");
+		this.searvings.setCaption(n.get(1) + "servings");
+		this.dificulty.setCaption(n.get(9).substring(86, n.get(9).length()-1));
+		this.dificulty.setIcon(new ThemeResource("icons/cook_time.png"));
+		
 		float size = i>this.ingredients.getHeight()? i:this.ingredients.getHeight();
 		this.panel.setHeight(this.panel.getHeight()+size+350+"px");
 	}
