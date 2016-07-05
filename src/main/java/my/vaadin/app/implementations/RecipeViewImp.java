@@ -15,7 +15,8 @@ public class RecipeViewImp extends RecipeView {
 	public RecipeViewImp(String imageURL, 
 			String name, 
 			List<List<String>> ingredients,
-			List<List<String>> steps) {
+			List<List<String>> steps,
+			List<List<String>> nutitionalInfo) {
 		Image image = new Image();
 		image.setSource(new ExternalResource(imageURL)); 
 		image.setHeight(this.image.getHeight()+"px");
@@ -30,17 +31,16 @@ public class RecipeViewImp extends RecipeView {
 			l.setHeight("50px");
 			this.ingredients.addComponent(l);
 		}
-		this.ingredients.setHeight(55*ingredients.size()+"px");
-		
-		int size = 0;
+		int i = 0;
 		for (List<String> step : steps) {
 			Label l = new Label();
 			l.setIcon(new ThemeResource("icons/"+step.get(1)+".png"));
 			l.setContentMode(ContentMode.HTML);
 			l.setValue(step.get(0));
 			this.steps.addComponent(l);
-			size += l.getHeight()+200;
+			i += l.getHeight()+50;
 		}
-		this.steps.setHeight(size+"px");
+		float size = i>this.ingredients.getHeight()? i:this.ingredients.getHeight();
+		this.panel.setHeight(this.panel.getHeight()+size+350+"px");
 	}
 }

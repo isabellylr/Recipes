@@ -46,6 +46,7 @@ public class MainScreen extends VerticalLayout {
 	protected CssLayout recipesLayout;
 	protected TextField searchTextField;
 	protected Button searchButton;
+	protected Button randomRecipe;
 
 	public MainScreen() {
 		Design.read(this);

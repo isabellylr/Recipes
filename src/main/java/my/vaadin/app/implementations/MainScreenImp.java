@@ -2,7 +2,6 @@ package my.vaadin.app.implementations;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.vaadin.data.Property;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.server.FontAwesome;
@@ -11,10 +10,13 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 
 import my.vaadin.app.MainScreen;
+import my.vaadin.app.RecipeView;
 import my.vaadin.app.util.Queries;
 import my.vaadin.app.util.Util;
 
 import com.vaadin.ui.CheckBox;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 
 @SuppressWarnings("serial")
 public class MainScreenImp extends MainScreen{
@@ -53,6 +55,17 @@ public class MainScreenImp extends MainScreen{
 				@Override
 				public void buttonClick(ClickEvent event) {
 					searchAction();
+				}
+			});
+			
+			this.randomRecipe.addClickListener(new ClickListener() {
+				@Override
+				public void buttonClick(ClickEvent event) {
+					try {
+						randomRecipe();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 			});
 			updateRecipes();
@@ -199,5 +212,18 @@ public class MainScreenImp extends MainScreen{
 			this.recipesLayout.addComponent(recipeOverview);
 		}
 		this.recipesLayout.setHeight((result.size()/3)*250+20+"px");
+	}
+	
+	private void randomRecipe() throws Exception {
+		int randomNum = 0 + (int)(Math.random() * result.size()); 
+		List<String> info = result.get(randomNum);
+		RecipeView content = new RecipeViewImp(info.get(5), info.get(1),
+				Util.runQuery(Queries.ingredientsQuery(info.get(0))),
+				Util.runQuery(Queries.stepsQuery(info.get(0))));
+		Window w = new Window(info.get(1));
+    	w.setContent(content);
+    	w.center();
+    	w.setResizable(false);
+        UI.getCurrent().addWindow(w);
 	}
 }

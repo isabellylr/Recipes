@@ -25,7 +25,7 @@ public class RecipeOverview extends VerticalLayout {
 	protected Label recipeName;
 	protected Button prepTime;
 	protected Button cookTime;
-	protected Button servings;
+	protected Button calories;
 
 	public RecipeOverview() {
 		Design.read(this);
