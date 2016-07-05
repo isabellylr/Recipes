@@ -10,7 +10,7 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 sourceUri	datasource1
 connectionUrl	jdbc:mysql://localhost/recipes?sessionVariables=sql_mode='ANSI'
 username	root
-password	asesganadas
+password	root
 driverClass	com.mysql.jdbc.Driver
 
 [MappingDeclaration] @collection [[
